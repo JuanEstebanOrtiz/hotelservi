@@ -21,11 +21,7 @@
 		}
 
 		.c-2{
-			background: rgba(0,0,150,1);
-		}
-
-		.c-3{
-			background: green;
+			background: blue;
 		}
 
 		ul li:hover .hover{
@@ -55,7 +51,7 @@
 								<div class="hover c-1"></div>
 							</li>
 							<li>
-								<a href="<?php echo base_url(); ?>index.php/inicio/usu_contacto" data-ajax="false">Contactos</a>
+								<a href="<?php echo base_url(); ?>index.php/principal/usu_contacto" data-ajax="false">Contactos</a>
 								<div class="hover c-2"></div>
 							</li>
 						</ul>
@@ -66,7 +62,7 @@
          				 <img src="<?php echo base_url(); ?>imagenes/user.png" alt="">
         			</a>
         			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="<?php echo base_url(); ?>index.php/inicio/index" data-ajax="false">Inicio</a>
+						<a class="dropdown-item" href="<?php echo base_url(); ?>index.php/principal/index" data-ajax="false">Inicio</a>
          				<a class="dropdown-item" href="<?php echo base_url(); ?>index.php/principal/ingreso" data-ajax="false">Iniciar Sesi&oacute;n</a>
           				<a class="dropdown-item" href="<?php echo base_url(); ?>index.php/cuentas/index_ingreso" data-ajax="false">Inidddciar Sesi&oacute;n</a>
         			</div>

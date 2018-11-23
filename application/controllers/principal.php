@@ -13,6 +13,13 @@ class principal extends CI_Controller {
 		$this->load->view('view_index');
 		$this->load->view('view_footer');
     }
+
+    public function usu_contacto()
+	{
+		$this->load->view('view_menu');
+		$this->load->view('view_contacto');
+		$this->load->view('view_footer');
+	}
     
     public function ingreso()
     {
