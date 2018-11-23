@@ -28,18 +28,12 @@
                 <img src="<?php echo base_url(); ?>imagenes/playa.jpg" alt="" >
             </div>
             <div class="ui-block-b">
-                <form action="<?php echo base_url(); ?>index.php/cuentas/registro" method="POST" data-ajax="false">
-                    <label for="">Nombre: </label>
-                    <input type="text" name="firstname">
-                    <label for="">Apellido: </label>
-                    <input type="text" name="lastname">
-                    <label for="">Correo: </label>
-                    <input type="text" name="email">
+                <form action="<?php echo base_url(); ?>index.php/principal/ingreso" method="POST" data-ajax="false">
                     <label for="">Usuario: </label>
                     <input type="text" name="user">
                     <label for="">Contraseña: </label>
                     <input type="password" name="pass">
-                    <input type="submit" value="Crear Cuenta">
+                    <input type="submit" value="Ingresar">
                 </form>
         </div>
     </div>

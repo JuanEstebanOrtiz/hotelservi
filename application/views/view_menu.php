@@ -67,8 +67,8 @@
         			</a>
         			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="<?php echo base_url(); ?>index.php/inicio/index" data-ajax="false">Inicio</a>
-         				<a class="dropdown-item" href="<?php echo base_url(); ?>index.php/cuentas/index_registro" data-ajax="false">Crear Sesi&oacute;n</a>
-          				<a class="dropdown-item" href="<?php echo base_url(); ?>index.php/cuentas/index_ingreso" data-ajax="false">Iniciar Sesi&oacute;n</a>
+         				<a class="dropdown-item" href="<?php echo base_url(); ?>index.php/principal/ingreso" data-ajax="false">Iniciar Sesi&oacute;n</a>
+          				<a class="dropdown-item" href="<?php echo base_url(); ?>index.php/cuentas/index_ingreso" data-ajax="false">Inidddciar Sesi&oacute;n</a>
         			</div>
 				</div>
 			</div>
