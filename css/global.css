@@ -1,0 +1,6 @@
+.form_container{border:1px solid #fff;padding: 10px 40px; margin-top: 20vh;
+align-items: center;margin-left: 30px}
+
+input[type=number]{
+  width: 70px;
+}
