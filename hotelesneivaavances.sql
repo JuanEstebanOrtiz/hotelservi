@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-11-2018 a las 23:15:10
+-- Tiempo de generación: 24-11-2018 a las 17:28:53
 -- Versión del servidor: 10.1.30-MariaDB
 -- Versión de PHP: 5.6.33
 
@@ -34,6 +34,14 @@ CREATE TABLE `habitaciones` (
   `descripcion` varchar(150) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `habitaciones`
+--
+
+INSERT INTO `habitaciones` (`id`, `numerohabitacion`, `descripcion`) VALUES
+(25, 101, 'la habitacion tiene 5 camas'),
+(28, 201, '5 camas con 2 baños');
+
 -- --------------------------------------------------------
 
 --
@@ -46,6 +54,18 @@ CREATE TABLE `pedidos` (
   `descripcion` varchar(45) DEFAULT NULL,
   `habitacion` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `pedidos`
+--
+
+INSERT INTO `pedidos` (`id`, `nombre`, `descripcion`, `habitacion`) VALUES
+(1, 'aseo', 'limpieza del baño', 101),
+(5, 'comida', 'pizza', 201),
+(6, 'comida', 'espaguetis', 201),
+(7, 'toallas', 'estan sucias', 201),
+(8, 'conexion a la red', 'no hay internet', 201),
+(9, 'habitacion', 'limpieza al cuarto', 201);
 
 -- --------------------------------------------------------
 
@@ -63,6 +83,14 @@ CREATE TABLE `reservas` (
   `numerocamas` int(11) DEFAULT NULL,
   `habitacion` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `reservas`
+--
+
+INSERT INTO `reservas` (`id`, `nombre`, `identificacion`, `fechainicio`, `fechafinal`, `numeropersonas`, `numerocamas`, `habitacion`) VALUES
+(1, 'juan esteban ortiz', '1003815327', '2018-11-23 00:00:00', '2018-11-30 00:00:00', 5, 4, 101),
+(4, 'juan esteban ortiz', '1003815327', '2018-11-01 00:00:00', '2018-11-30 00:00:00', 10, 5, 201);
 
 -- --------------------------------------------------------
 
@@ -103,8 +131,10 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `usuario`, `contrasena`, `rol`) VALUES
-(1, NULL, NULL, 2),
-(2, 'esteban', '1234', 1);
+(2, 'esteban', '1234', 1),
+(3, 'leo', '12345', 2),
+(4, 'ortiz', '123456', 3),
+(7, 'juan_ortiz', 'copito11312', 1);
 
 --
 -- Índices para tablas volcadas
@@ -148,19 +178,19 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `habitaciones`
 --
 ALTER TABLE `habitaciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `reservas`
 --
 ALTER TABLE `reservas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
@@ -172,7 +202,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
