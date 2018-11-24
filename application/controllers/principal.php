@@ -13,13 +13,6 @@ class principal extends CI_Controller {
 		$this->load->view('view_index');
 		$this->load->view('view_footer');
     }
-
-    public function usu_contacto()
-	{
-		$this->load->view('view_menu');
-		$this->load->view('view_contacto');
-		$this->load->view('view_footer');
-	}
     
     public function ingreso()
     {
@@ -66,9 +59,9 @@ class principal extends CI_Controller {
     
     public function home_admin(){
 
-		$result['usuari']=$this->model_ingreso->consultaUsusarios();
-		$this->load->view('view_menu');
-		$this->load->view('view_admi',$result);
+		
+		$this->load->view('view_header_admi');
+		$this->load->view('view_admi');
 	}
 	public function home_cliente(){
 		$this->load->view('view_usuario');
@@ -83,15 +76,16 @@ class principal extends CI_Controller {
 
     public function eliminaUsuario($id){
 		$this->model_ingreso->eUsusario($id);
-		redirect("".base_url()."index.php/principal/home_admin");
+		redirect("".base_url()."index.php/principal/vistAdmiUsuario");
 		//$this->home_admin();
 	}
 	public function modificaUsuario($id){
 		$user= $this->input->post('user');
 		$pass= $this->input->post('pass');
+		$rol= $this->input->post('rol');
 
-		$this->model_ingreso->mUsusario($user,$pass,$id);
-		redirect("".base_url()."index.php/principal/home_admin");
+		$this->model_ingreso->mUsusario($user,$pass,$rol,$id);
+		redirect("".base_url()."index.php/principal/vistAdmiUsuario");
 		//$this->home_admin();
 	}
 
@@ -101,8 +95,15 @@ class principal extends CI_Controller {
         $rol=$this->input->post('rol');
 
 		$iduser=$this->model_ingreso->aUsusario($user,$pass,$rol);
-		redirect("".base_url()."index.php/principal/home_admin");
+		redirect("".base_url()."index.php/principal/vistAdmiUsuario");
 		//$this->home_admin();
+	}
+
+	public function vistAdmiUsuario()
+	{
+		$result['usuari']=$this->model_ingreso->consultaUsusarios();
+		$this->load->view('view_header_admi');
+		$this->load->view('view_admi_usuarios',$result);
 	}
     
 
