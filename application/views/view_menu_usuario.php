@@ -51,11 +51,11 @@
 					<div data-role="navbar">
 						<ul>
 							<li>
-								<a href="<?php echo base_url(); ?>index.php/principal/servicios_uno" data-ajax="false">Servicios</a>
+								<a href="<?php echo base_url(); ?>index.php/principal/servicios" data-ajax="false">Servicios</a>
 								<div class="hover c-1"></div>
 							</li>
 							<li>
-								<a href="<?php echo base_url(); ?>index.php/principal/contacto" data-ajax="false">Contactos</a>
+								<a href="<?php echo base_url(); ?>index.php/principal/contacto1" data-ajax="false">Contactos</a>
 								<div class="hover c-2"></div>
 							</li>
 						</ul>
@@ -67,7 +67,7 @@
         			</a>
         			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="<?php echo base_url(); ?>index.php/principal/index" data-ajax="false">Inicio</a>
-         				<a class="dropdown-item" href="<?php echo base_url(); ?>index.php/principal/ingreso" data-ajax="false">Iniciar Sesi&oacute;n</a>
+						 <a class="dropdown-item" href="<?php echo base_url(); ?>index.php/principal/ingreso" data-ajax="false">Iniciar Sesi&oacute;n</a>
 						 <a class="dropdown-item" href="<?php echo base_url(); ?>index.php/principal/index" data-ajax="false">Salir</a>
           				
         			</div>

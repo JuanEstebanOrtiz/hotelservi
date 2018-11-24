@@ -47,6 +47,23 @@ class pedidos extends CI_Controller {
 		$this->load->view('view_footer');
 	}
 
+	public function agregaPedidos_Cliente(){
+		$nombre= $this->input->post('nombre');
+        $descripcion= $this->input->post('descripcion');
+        $habitacion= $this->input->post('habitacion');
+
+		$iduser=$this->model_pedidos->aPedidos($nombre,$descripcion,$habitacion);
+		redirect("".base_url()."index.php/principal/servicios");
+		//$this->home_admin();
+	}
+
+	public function vistAdmiPedidos_empleado()
+	{
+		$result['usuari']=$this->model_pedidos->consultaPedidos();
+		$this->load->view('view_header_empleado');
+		$this->load->view('view_pedidos_empleado',$result);
+    }
+
 
 
 }

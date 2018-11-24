@@ -66,6 +66,10 @@
 								<a href="<?php echo base_url(); ?>index.php/habitaciones/vistAdmiHabitaciones" data-ajax="false">Habitaciones</a>
 								<div class="hover c-2"></div>
 							</li>
+							<li>
+								<a href="<?php echo base_url(); ?>index.php/principal/index" data-ajax="false">Salir</a>
+								<div class="hover c-2"></div>
+							</li>
 						</ul>
 					</div>
 				

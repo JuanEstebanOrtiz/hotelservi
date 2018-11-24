@@ -61,17 +61,19 @@ class principal extends CI_Controller {
 
 		
 		$this->load->view('view_header_admi');
-		$this->load->view('view_admi');
 	}
 	public function home_cliente(){
+		$this->load->view('view_menu_usuario');
 		$this->load->view('view_usuario');
 	}
+
 	public function home_camarero(){
-		$this->load->view('view_empleado');
+		$this->load->view('view_header_empleado');
     }
     
     public function home_botones(){
-		$this->load->view('view_empleado');
+		$this->load->view('view_header_empleado');
+		
     }
 
     public function eliminaUsuario($id){
@@ -104,6 +106,31 @@ class principal extends CI_Controller {
 		$result['usuari']=$this->model_ingreso->consultaUsusarios();
 		$this->load->view('view_header_admi');
 		$this->load->view('view_admi_usuarios',$result);
+	}
+
+	public function contacto(){
+		$this->load->view('view_menu');
+		$this->load->view('view_contacto');
+	}
+
+	public function contacto1(){
+		$this->load->view('view_menu_usuario');
+		$this->load->view('view_contacto');
+	}
+
+	public function servicios(){
+		$this->load->view('view_menu_usuario');
+		$this->load->view('view_servicios');
+	}
+
+	public function servicios_uno(){
+		$this->load->view('view_menu');
+		$this->load->view('view_servicios_unoo');
+	}
+
+	public function cliente_pedido(){
+		$this->load->view('view_menu');
+		$this->load->view('view_cliente_pedido');
 	}
     
 

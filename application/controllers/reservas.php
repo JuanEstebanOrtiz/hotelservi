@@ -47,6 +47,13 @@ class reservas extends CI_Controller {
 		redirect("".base_url()."index.php/reservas/vistAdmiReservas");
 		//$this->home_admin();
 	}
+
+	public function vistAdmiReservas_empleado()
+	{
+		$result['usuari']=$this->model_reservas->consultaReservas();
+		$this->load->view('view_header_empleado');
+		$this->load->view('view_reservas_empleado',$result);
+    }
     
 
 

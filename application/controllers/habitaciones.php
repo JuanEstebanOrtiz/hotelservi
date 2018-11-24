@@ -15,8 +15,8 @@ class habitaciones extends CI_Controller {
 	}
 
 	public function agregaHabitaciones(){
-		$user= $this->input->post('numerohabitaciones');
-        $pass= $this->input->post('descripcion');
+		$numerohabitacion= $this->input->post('numerohabitacion');
+        $descripcion= $this->input->post('descripcion');
 
 		$iduser=$this->model_habitaciones->aHabitaciones($numerohabitacion,$descripcion);
 		redirect("".base_url()."index.php/habitaciones/vistAdmiHabitaciones");
@@ -30,14 +30,21 @@ class habitaciones extends CI_Controller {
 		$this->load->view('view_habitaciones',$result);
     }
     public function modificaUsuario($id){
-		$user= $this->input->post('numerohabitacion');
-		$pass= $this->input->post('descripcion');
+		$numerohabitacion= $this->input->post('numerohabitacion');
+		$descripcion= $this->input->post('descripcion');
 
 
 		$this->model_habitaciones->mHabitacion($numerohabitacion,$descripcion,$id);
 		redirect("".base_url()."index.php/habitaciones/vistAdmiHabitaciones");
 		//$this->home_admin();
 	}
+
+	public function vistAdmiHabitaciones_empleado()
+	{
+		$result['usuari']=$this->model_habitaciones->consultaHabitaciones();
+		$this->load->view('view_header_empleado');
+		$this->load->view('view_habitaciones_empleado',$result);
+    }
     
 
 
